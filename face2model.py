@@ -8,6 +8,7 @@ import sys
 
 def run(filename):
     os.system(f"docker run --rm -v {os.getcwd()}/data:/data:Z asjackson/vrn /runner/run.sh /data/{filename}")
+    os.system(f"sudo chmod 666 {os.getcwd()}/data/*")
 
 def main(filepath):
     tic = time.time()
