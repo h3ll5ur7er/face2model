@@ -132,7 +132,7 @@ def add_uv(input_file:str, output_obj_file:str=None, output_mat_file:str=None) -
 
 def to_obj(vertices:List[Tuple[float]], colors:List[Tuple[int]], faces:List[Tuple[int]], f:TextIO=sys.stdout) -> None:
     for vertex, color in zip(vertices, colors):
-        print(f'v {vertex[0]} {vertex[1]} {vertex[2]} {color[0]} {color[1]} {color[2]}', file=f)
+        print(f'v {vertex[0]} {vertex[1]} {vertex[2]} {color[0]/255} {color[1]/255} {color[2]/255}', file=f)
     for face in faces:
         print(f'f {face[0]+1} {face[2]+1} {face[1]+1}', file=f)
 
